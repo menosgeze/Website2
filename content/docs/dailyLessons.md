@@ -22,22 +22,6 @@ Not only, I did not have to set it up,
 it works perfectly, and I was able to
 watch Netflix and Amazon movies again.
 
-## GRUB for what?
-(Aug-10-2019) For arch, it is recommended to use GRUB. 
-At least my PACMAN, 
-or teacher friend who introduced me
-to Arch told me to look into. Since it is a 
-core package, I did
-
-    sudo pacman -S grub
-
-which is currently in version 2.05. Then look at the Arch-wiki
-[here](https://wiki.archlinux.org/index.php/GRUB)
-
-The files to edit in order will be:
-    /etc/default/grub
-    /etc/grub.d
-
 ## Mounting Windows to Linux
 While I was transitioning from Windows 
 to Linux, I wanted to retrieve my

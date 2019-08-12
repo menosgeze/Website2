@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Wolfox on GZE</title>
+    <link>http://example.org/</link>
+    <description>Recent content in Wolfox on GZE</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Sun, 28 Sep 2014 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="http://example.org/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Creating a New Theme</title>
+      <link>http://example.org/posts/creating-a-new-theme/</link>
+      <pubDate>Sun, 28 Sep 2014 00:00:00 +0000</pubDate>
+      
+      <guid>http://example.org/posts/creating-a-new-theme/</guid>
+      <description>Introduction This tutorial will show you how to create a simple theme in Hugo. I assume that you are familiar with HTML, the bash command line, and that you are comfortable using Markdown to format content. I&amp;rsquo;ll explain how Hugo uses templates and how you can organize your templates to create a theme. I won&amp;rsquo;t cover using CSS to style your theme.
+We&amp;rsquo;ll start with creating a new site with a very basic template.</description>
+    </item>
+    
+    <item>
+      <title>Migrate to Hugo from Jekyll</title>
+      <link>http://example.org/posts/migrate-from-jekyll/</link>
+      <pubDate>Mon, 10 Mar 2014 00:00:00 +0000</pubDate>
+      
+      <guid>http://example.org/posts/migrate-from-jekyll/</guid>
+      <description>Move static content to static Jekyll has a rule that any directory not starting with _ will be copied as-is to the _site output. Hugo keeps all static content under static. You should therefore move it all there. With Jekyll, something that looked like
+▾ &amp;lt;root&amp;gt;/ ▾ images/ logo.png  should become
+▾ &amp;lt;root&amp;gt;/ ▾ static/ ▾ images/ logo.png  Additionally, you&amp;rsquo;ll want any files that should reside at the root (such as CNAME) to be moved to static.</description>
+    </item>
+    
+    <item>
+      <title>(Hu)go Template Primer</title>
+      <link>http://example.org/posts/goisforlovers/</link>
+      <pubDate>Wed, 02 Apr 2014 00:00:00 +0000</pubDate>
+      
+      <guid>http://example.org/posts/goisforlovers/</guid>
+      <description>Hugo uses the excellent Go html/template library for its template engine. It is an extremely lightweight engine that provides a very small amount of logic. In our experience that it is just the right amount of logic to be able to create a good static website. If you have used other template systems from different languages or frameworks you will find a lot of similarities in Go templates.
+This document is a brief primer on using Go templates.</description>
+    </item>
+    
+    <item>
+      <title>Getting Started with Hugo</title>
+      <link>http://example.org/posts/hugoisforlovers/</link>
+      <pubDate>Wed, 02 Apr 2014 00:00:00 +0000</pubDate>
+      
+      <guid>http://example.org/posts/hugoisforlovers/</guid>
+      <description>Step 1. Install Hugo Go to Hugo releases and download the appropriate version for your OS and architecture.
+Save it somewhere specific as we will be using it in the next step.
+More complete instructions are available at Install Hugo
+Step 2. Build the Docs Hugo has its own example site which happens to also be the documentation site you are reading right now.
+Follow the following steps:
+ Clone the Hugo repository Go into the repo Run hugo in server mode and build the docs Open your browser to http://localhost:1313  Corresponding pseudo commands:</description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>http://example.org/docs/postgresql_summary/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://example.org/docs/postgresql_summary/</guid>
+      <description>PostgreSQL Installing.  Go to the github source here and download the github from source. Go to documentation here or for a full process here here My idea of installing it from source is that you can build with specific option. In particular, I was interested in &amp;ndash;with-python:
+cd /path_to_folder_POSTGRESQL ./configure mkdir build_dir cd build_dir /path_to_source_tree/configure &amp;ndash;with-python gmake  Some minor problems  It could be that the settings of the computer don&amp;rsquo;t know the path to the command &amp;ldquo;pg_ctl&amp;rdquo; export PATH=$PATH:/path_to_pg_ctl  This is usually found in: cd /usr/local/psql/bin</description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>http://example.org/docs/dailylessons/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://example.org/docs/dailylessons/</guid>
+      <description>The life of a beginner - Still more Arch! Listing Partitions To see a tree of the partitions in your hard drives and solid state drives, even usb and other mounted devices, just type:
+lsblk  Watching protected content from Streaming Websites. (Aug-10-2019) Since I use Arch-linux (new to it) and Chromium (also new to it) in my desktop pc, I was not able to play Netflix or Amazon. Luckily, I found that rather than installing desktop applications for each of them, I could install WideVine from the AUR.</description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>http://example.org/docs/sub-section/ego-numen/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://example.org/docs/sub-section/ego-numen/</guid>
+      <description>Ego numen obest Mors curru Iove pedibus curva humano salutem Lorem markdownum, mole, profugus. Madida ne quantus, pars verba lacrimis memorique longius cupidi ipse attrahit et. Vota liberiore rector suos fallit videor iustissimus barbara quod habet. Tantum patriaeque omnia spectes inimica mari nec spemque ululare: nuper quodque, sic, quo.
+var php_wireless = 4; siteWinsock.switch_inbox += so_control_logic; if (target_website.bugCopyrightIcs.cms_digital_method(mca_active) &amp;gt; cloneScrollHttps) { https_drop_hard(97, sshPayload + autoresponder_bmp_file); hypertextCommercialBookmark = optical_impact; } architecture = userRate.</description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>http://example.org/docs/sub-section/natusque/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://example.org/docs/sub-section/natusque/</guid>
+      <description>Natusque putat tu vero Scylaceaque neve coepisse Lorem markdownum hostem et addit arbusta iacuit laetissimus medio, quae quoque faciente. Belli et fuerant fuerat, curas Abas equos sacerdos iactasque videndo tanto, sub. Et simulasse caedis, est nec acre addiderat, manet Phrygiae quisquam, ater, aura sua deique cornua. Bacchi dixi cum tollit, ad sinistra mirum, non se dis fraudare in decimo vocet. Ducunt Acrisio sine ratem: enim illas venti, ferit nam ora.</description>
+    </item>
+    
+  </channel>
+</rss>

@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Docs on GZE</title>
+    <link>http://example.org/docs/</link>
+    <description>Recent content in Docs on GZE</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    
+	<atom:link href="http://example.org/docs/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title></title>
+      <link>http://example.org/docs/postgresql_summary/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://example.org/docs/postgresql_summary/</guid>
+      <description>PostgreSQL Installing.  Go to the github source here and download the github from source. Go to documentation here or for a full process here here My idea of installing it from source is that you can build with specific option. In particular, I was interested in &amp;ndash;with-python:
+cd /path_to_folder_POSTGRESQL ./configure mkdir build_dir cd build_dir /path_to_source_tree/configure &amp;ndash;with-python gmake  Some minor problems  It could be that the settings of the computer don&amp;rsquo;t know the path to the command &amp;ldquo;pg_ctl&amp;rdquo; export PATH=$PATH:/path_to_pg_ctl  This is usually found in: cd /usr/local/psql/bin</description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>http://example.org/docs/dailylessons/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://example.org/docs/dailylessons/</guid>
+      <description>The life of a beginner - Still more Arch! Listing Partitions To see a tree of the partitions in your hard drives and solid state drives, even usb and other mounted devices, just type:
+lsblk  Watching protected content from Streaming Websites. (Aug-10-2019) Since I use Arch-linux (new to it) and Chromium (also new to it) in my desktop pc, I was not able to play Netflix or Amazon. Luckily, I found that rather than installing desktop applications for each of them, I could install WideVine from the AUR.</description>
+    </item>
+    
+  </channel>
+</rss>

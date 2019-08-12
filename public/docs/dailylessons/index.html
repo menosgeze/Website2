@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>GZE</title>
+
+
+<link rel="stylesheet" href="/book.min.6c7317d2e8552a0ac3ea8fd4ba500c3dfb1cc9c74e7afd73eee6d729751fad30.css">
+
+
+<script defer src="/search.min.35958ea28ad808915d3ec13f76f2ff81c9dc90e3efe630c00d3c577570606e8e.js"></script>
+
+
+
+<link rel="icon" href="/favicon.png" type="image/x-icon">
+
+
+<!--
+Made with Book Theme
+https://github.com/alex-shpak/hugo-book
+-->
+
+  
+</head>
+
+<body>
+  <input type="checkbox" style="display: none" id="menu-control" />
+  <main class="flex container">
+
+    <aside class="book-menu fixed">
+      <nav>
+<h2 class="book-brand">
+  <a href="http://example.org/">GZE</a>
+</h2>
+
+
+<div class="book-search">
+  <input type="text" placeholder="Search" id="book-search-input" maxlength="64" readonly />
+  <div class="book-search-spinner spinner hidden"></div>
+  <ul id="book-search-results"></ul>
+</div>
+
+
+
+
+
+    
+
+  
+  
+
+
+
+
+
+ 
+  
+    
+
+  <ul>
+    
+      
+
+  <li >
+    
+      
+
+  <a href="/docs/sub-section/" >
+      Sub Section
+  </a>
+
+
+    
+
+    
+
+  <ul>
+    
+    
+    <li>
+      
+
+  <a href="/docs/sub-section/ego-numen/" >
+      Ego Numen
+  </a>
+
+
+    </li>
+    
+    <li>
+      
+
+  <a href="/docs/sub-section/natusque/" >
+      Natusque
+  </a>
+
+
+    </li>
+    
+  </ul>
+
+
+  </li>
+
+
+    
+    
+    <li>
+      
+
+  <a href="/docs/postgresql_summary/" >
+      Postgre S Q L Summary
+  </a>
+
+
+    </li>
+    
+    <li>
+      
+
+  <a href="/docs/dailylessons/"  class="active">
+      Daily Lessons
+  </a>
+
+
+    </li>
+    
+  </ul>
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+</nav>
+
+
+<script>
+(function() {
+  var menu = document.querySelector("aside.book-menu nav");
+  addEventListener("beforeunload", function(event) {
+    localStorage.setItem("menu.scrollTop", menu.scrollTop);
+  });
+  menu.scrollTop = localStorage.getItem("menu.scrollTop");
+})();
+</script>
+
+    </aside>
+
+    <div class="book-page">
+      <header class="flex align-center justify-between book-header">
+  <label for="menu-control">
+    <img src="/svg/menu.svg" alt="Menu" />
+  </label>
+  <strong>Daily Lessons</strong>
+</header>
+
+      
+<article class="markdown">
+
+<h1 id="the-life-of-a-beginner-still-more-arch">The life of a beginner - Still more Arch!</h1>
+
+<h2 id="listing-partitions">Listing Partitions</h2>
+
+<p>To see a tree of the partitions in your
+hard drives and solid state drives, even
+usb and other mounted devices, just type:</p>
+
+<pre><code>lsblk
+</code></pre>
+
+<h2 id="watching-protected-content-from-streaming-websites">Watching protected content from Streaming Websites.</h2>
+
+<p>(Aug-10-2019) Since I use Arch-linux
+(new to it) and Chromium (also new to it)
+in my desktop pc,  I was not able to play
+Netflix or Amazon. Luckily,
+I found that rather than installing
+desktop applications for each of them,
+I could install WideVine from the AUR.</p>
+
+<pre><code>yay WideVine
+</code></pre>
+
+<p>Not only, I did not have to set it up,
+it works perfectly, and I was able to
+watch Netflix and Amazon movies again.</p>
+
+<h2 id="grub-for-what">GRUB for what?</h2>
+
+<p>(Aug-10-2019) For arch, it is recommended to use GRUB.
+At least my PACMAN,
+or teacher friend who introduced me
+to Arch told me to look into. Since it is a
+core package, I did</p>
+
+<pre><code>sudo pacman -S grub
+</code></pre>
+
+<p>which is currently in version 2.05. Then look at the Arch-wiki
+<a href="https://wiki.archlinux.org/index.php/GRUB">here</a></p>
+
+<p>The files to edit in order will be:
+    /etc/default/grub
+    /etc/grub.d</p>
+
+<h2 id="mounting-windows-to-linux">Mounting Windows to Linux</h2>
+
+<p>While I was transitioning from Windows
+to Linux, I wanted to retrieve my
+Windows personal files. One suggestion from
+my PACMAN was to use the package <strong>ntfs-3g</strong>
+installed with:</p>
+
+<pre><code>sudo pacman -S ntfs-3g
+</code></pre>
+
+<p>or with:</p>
+
+<pre><code>yay ntfs-3g
+</code></pre>
+
+<p>because it is a core package. Then one
+can just mount as usual:</p>
+
+<pre><code>mount /dev/Windows_partition /dev/home_partition
+</code></pre>
+
+<p>In the tutorial
+<a href="BS&gt;https://www.tecmint.com/how-do-i-access-or-mount-windows-ntfs-partition-in-linux/">here</a>
+Ravi Saive suggests to use the option <strong>-t ntfs-3g</strong> which by putting it before
+the source Windows_partition limits the set of filesystem types to be used.</p>
+
+<!--
+## Fast History Search in the Z-shell
+Look at [here](https://unix.stackexchange.com/questions/97843/how-can-i-search-history-with-text-already-entered-at-the-prompt-in-zsh)
+
+Since I am using kitty per suggestion of my ZEN, rather than going to
+**.zshrc** which is in my user directory **/home/username**, I will write these
+commands in **.config/kitty/kitty.conf**
+-->
+</article>
+
+      
+
+      
+    </div>
+
+    
+  
+
+  <aside class="book-toc level-6 fixed">
+    <nav id="TableOfContents">
+<ul>
+<li><a href="#the-life-of-a-beginner-still-more-arch">The life of a beginner - Still more Arch!</a>
+<ul>
+<li><a href="#listing-partitions">Listing Partitions</a></li>
+<li><a href="#watching-protected-content-from-streaming-websites">Watching protected content from Streaming Websites.</a></li>
+<li><a href="#grub-for-what">GRUB for what?</a></li>
+<li><a href="#mounting-windows-to-linux">Mounting Windows to Linux</a></li>
+</ul></li>
+</ul>
+</nav>
+  </aside>
+
+
+
+  </main>
+  
+  
+  
+</body>
+
+</html>

@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>GZE</title>
+
+
+<link rel="stylesheet" href="/book.min.6c7317d2e8552a0ac3ea8fd4ba500c3dfb1cc9c74e7afd73eee6d729751fad30.css">
+
+
+<script defer src="/search.min.35958ea28ad808915d3ec13f76f2ff81c9dc90e3efe630c00d3c577570606e8e.js"></script>
+
+
+
+<link rel="icon" href="/favicon.png" type="image/x-icon">
+
+
+<!--
+Made with Book Theme
+https://github.com/alex-shpak/hugo-book
+-->
+
+  
+</head>
+
+<body>
+  <input type="checkbox" style="display: none" id="menu-control" />
+  <main class="flex container">
+
+    <aside class="book-menu fixed">
+      <nav>
+<h2 class="book-brand">
+  <a href="http://example.org/">GZE</a>
+</h2>
+
+
+<div class="book-search">
+  <input type="text" placeholder="Search" id="book-search-input" maxlength="64" readonly />
+  <div class="book-search-spinner spinner hidden"></div>
+  <ul id="book-search-results"></ul>
+</div>
+
+
+
+
+
+    
+
+  
+  
+
+
+
+
+
+ 
+  
+    
+
+  <ul>
+    
+      
+
+  <li >
+    
+      
+
+  <a href="/docs/sub-section/" >
+      Sub Section
+  </a>
+
+
+    
+
+    
+
+  <ul>
+    
+    
+    <li>
+      
+
+  <a href="/docs/sub-section/ego-numen/" >
+      Ego Numen
+  </a>
+
+
+    </li>
+    
+    <li>
+      
+
+  <a href="/docs/sub-section/natusque/" >
+      Natusque
+  </a>
+
+
+    </li>
+    
+  </ul>
+
+
+  </li>
+
+
+    
+    
+    <li>
+      
+
+  <a href="/docs/postgresql_summary/"  class="active">
+      Postgre S Q L Summary
+  </a>
+
+
+    </li>
+    
+    <li>
+      
+
+  <a href="/docs/dailylessons/" >
+      Daily Lessons
+  </a>
+
+
+    </li>
+    
+  </ul>
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+</nav>
+
+
+<script>
+(function() {
+  var menu = document.querySelector("aside.book-menu nav");
+  addEventListener("beforeunload", function(event) {
+    localStorage.setItem("menu.scrollTop", menu.scrollTop);
+  });
+  menu.scrollTop = localStorage.getItem("menu.scrollTop");
+})();
+</script>
+
+    </aside>
+
+    <div class="book-page">
+      <header class="flex align-center justify-between book-header">
+  <label for="menu-control">
+    <img src="/svg/menu.svg" alt="Menu" />
+  </label>
+  <strong>Postgre S Q L Summary</strong>
+</header>
+
+      
+<article class="markdown">
+
+<h1 id="postgresql">PostgreSQL</h1>
+
+<h2 id="installing">Installing.</h2>
+
+<ol>
+<li>Go to the github source
+<a href="https://github.com/postgres/postgres">here</a>
+and download the github from source.</li>
+<li>Go to documentation
+<a href="https://www.postgresql.org/docs/9.3/install-short.html">here</a>
+or for a full process here
+<a href="https://www.postgresql.org/docs/9.3/install-procedure.html">here</a></li>
+<li>My idea of installing it from source is that you can
+build with specific option. In particular, I was interested in
+<strong>&ndash;with-python</strong>:<br />
+cd /path_to_folder_POSTGRESQL
+./configure
+mkdir build_dir
+cd build_dir
+/path_to_source_tree/configure &ndash;with-python
+gmake</li>
+</ol>
+
+<h2 id="some-minor-problems">Some minor problems</h2>
+
+<ol>
+<li>It could be that the settings of the computer don&rsquo;t know
+the path to the command &ldquo;pg_ctl&rdquo;
+export PATH=$PATH:/path_to_pg_ctl</li>
+</ol>
+
+<p>This is usually found in:
+    cd /usr/local/psql/bin</p>
+
+<p>To make it permanent, so one does not need to write it again
+the next time one logs in Linux, one goes to:
+    vim ~/.profile</p>
+
+<p>and adds it there. Or add it to the initializing file of your
+personalized shell.</p>
+
+<ol>
+<li><p>It could be that one forgets to close the server at the end
+of a session and then one has problems to restart the server. Then
+go to the folder of the data (see below psql_data)
+and then look for <strong>postmaster.pid</strong>,
+which is a log file that conflicts with the server. One could delete it
+by:
+rm postmaster.pid</p></li>
+
+<li><p>It could be that still one cannot open the database. In this case,
+kill the process by identifying it with:
+top
+The problem is that the line
+export PGHOST=&ldquo;path_to_data_folder&rdquo;
+might have been forgotten.</p></li>
+</ol>
+
+<h2 id="creating-a-database">Creating a Database</h2>
+
+<p>I love Cocalc/SageMath documentation for using postgreSQL in Cocalc in 2 min
+<a href="https://doc.cocalc.com/howto/postgresql.html">here</a></p>
+
+<p>In here, either one has properly set up your <strong>HOME</strong> variable or replace it by what <strong>pwd</strong> prints.</p>
+
+<ol>
+<li>Create the data folder
+cd
+pg_ctl initdb -D psql_data
+echo &ldquo;unix_socket_directories = &lsquo;$HOME/psql_data&rsquo;&rdquo; &gt;&gt; psql_data/postgresql.conf
+echo &ldquo;unix_socket_permissions = 0700&rdquo; &gt;&gt; psql_data/postgresql.conf</li>
+</ol>
+
+<p>Alternatively, after creating this folder,
+move to it and write the lines
+in quotes to the file <strong>postgresql.conf</strong>
+inside the folder.</p>
+
+<ol>
+<li>Start the postgresql server
+pg_ctl -D psql_data -l logfile -o &ldquo;-h &ldquo;&rdquo; start</li>
+</ol>
+
+<p>The options are to write a logfile in case of errors. However,
+one can just start it with:
+    pg_ctl -D psql_data start</p>
+
+<p>And check it is running with:
+    pg_ctl -D psql_data status</p>
+
+<ol>
+<li><p>Create the database using these configuration in this folder:
+export PGHOST=&ldquo;$HOME/psql_data&rdquo;
+createdb dbname
+psql dbname
+Don&rsquo;t forget to replace the database name <strong>dbname</strong>.</p></li>
+
+<li><p>Exit the database and close the server with:
+pg_ctl -D psql_data stop</p></li>
+</ol>
+</article>
+
+      
+
+      
+    </div>
+
+    
+  
+
+  <aside class="book-toc level-6 fixed">
+    <nav id="TableOfContents">
+<ul>
+<li><a href="#postgresql">PostgreSQL</a>
+<ul>
+<li><a href="#installing">Installing.</a></li>
+<li><a href="#some-minor-problems">Some minor problems</a></li>
+<li><a href="#creating-a-database">Creating a Database</a></li>
+</ul></li>
+</ul>
+</nav>
+  </aside>
+
+
+
+  </main>
+  
+  
+  
+</body>
+
+</html>

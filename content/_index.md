@@ -1,79 +1,70 @@
 ---
-title: Introduction
+title: Wolfox
 type: docs
 ---
 
-# Acerbo datus maxime
+# GEZE
 
+The content of this website is the following:
+![myself](/home/geze/Desktop/Website/content)
 {{< columns >}}
-## Astris ipse furtiva
 
-Est in vagis et Pittheus tu arge accipiter regia iram vocatur nurus. Omnes ut
-olivae sensit **arma sorori** deducit, inesset **crudus**, ego vetuere aliis,
-modo arsit? Utinam rapta fiducia valuere litora _adicit cursu_, ad facies
+
+## 1. Summaries 
+I will either list links to 
+__summaries__ of classes that I have taught,
+or of book chapters that I have read,
+or summaries of my daily lessons.
 
 <--->
+## 2. Tutorials.
+I will post either __tutorials__ in my own notation,
+**links** to __guides__ and self adjustments,
+and **links** to __Cheat Sheets__ for either video games or software or any kind.
 
-## Suis quot vota
 
-Ea _furtique_ risere fratres edidit terrae magis. Colla tam mihi tenebat:
-miseram excita suadent es pecudes iam. Concilio _quam_ velatus posset ait quod
-nunc! Fragosis suae dextra geruntur functus vulgata.
+<--->
+## 3. My Family. 
+
 {{< /columns >}}
 
 
-## Tempora nisi nunc
+## Who I am?
+I am a Salvadorean who went from being a _Parking Attendant_
+in Universal Studios, Los Angeles,
+to be a (currently unemployed) _Mathematics Ph.D._,
+in only 12 years.
+I am an ex-Perico, ex-Bruin, ex-Matador, ex-Husky 
+who needs to learn fast to
+get a job, and reunite with my American redhead wife,
+and our two kids. 
 
-Lorem **markdownum** emicat gestu. Cannis sol pressit ducta. **Est** Idaei,
-tremens ausim se tutaeque, illi ulnis hausit, sed, lumina cutem. Quae avis
-sequens!
+## My first lesson
+In order to see a live-preview of this page
+while I edit it, is 
+    
+    hugo server --minify --theme book
 
-    var panel = ram_design;
-    if (backup + system) {
-        file.readPoint = network_native;
-        sidebar_engine_device(cell_tftp_raster,
-                dual_login_paper.adf_vci.application_reader_design(
-                graphicsNvramCdma, lpi_footer_snmp, integer_model));
-    }
-    public_keyboard_docking += error.controller_gibibyte_plug.ip(4,
-            asciiPetaflops, software(supercomputer_compatible_status + 4));
-    dynamic_disk.indexModeLaptop = bufferTftpReality;
-    var export_vlog_sequence = trinitron_flowchart + supercomputer_cluster_rj(
-            -1, toolbar_powerpoint_query, -2 / multiprocessing_impression);
+1. The command **hugo** manages the website. 
+2. The command **server** will host a server in your computer
+3. The option **--minify** is a command that helps 
+with the translation of markdown to html,
+and fixes previous bugs.
+4. The option **--theme book** is the theme choice of this website.
+5. Open http://localhost:1313/ in your browser. 
 
-## Locis suis novi cum suoque decidit eadem
+The list of links that will appear 
+in the right menu are the sections of 
+this main page, which is located in:
 
-Idmoniae ripis, at aves, ali missa adest, ut _et autem_, et ab? Venit spes
-versus finis sermonibus patefecit murum nec est sine oculis. _Ille_ inmota
-macies domoque caelestia cadit tantummodo scelus procul, corde!
+    /path_to_website/content/_index.md
 
-1. Dolentem capi parte rostro alvum habentem pudor
-2. Fulgentia sanguine paret
-3. E punior consurgit lentus
-4. Vox hasta eras micantes
+The list of links of the left menu
+are documents listed in:
 
-## Facibus pharetrae indetonsusque indulsit sic incurrite foliis
+    /path_to_website/content/docs
 
-Nefandam et prisci palmas! Blandita cutis flectitur montis macies, te _nati_
-Latiis; turbaque inferias. Virginis tibi peracta avidusque facies caper nec, e
-at ademptae, mira.
 
-    direct *= font(inputScareware(sliHome), crossplatform.byte(
-            ppl_encryption.excel_e_rte(integratedModelModifier), timeVirtual,
-            floating_speakers.media_printer(us, yahoo, primaryPhp)));
-    friendly_metal_flatbed(cd, isoPrimaryStorage(reader), dmaMirrored);
-    if (parse_flash_cron.metalGif(1, adServiceDevice, utility)) {
-        adf -= operation_cdma_samba;
-        imapGif.switch += torrent;
-    } else {
-        pmu.disk_captcha = digital_ppp_pci + recursionTransistor(5, dram);
-        ajax_service += grayscalePythonLock;
-        google_scroll_capacity = ftp + engine_dslam_sidebar / tape - 1;
-    }
-    drive_rw = zipTftp;
-    var suffix = software_router_extension.dimm_ddr(-5,
-            kernel_digital_minisite);
 
-Vocavit toto; alas **mitis** maestus in liquidarum ab legi finitimosque dominam
-tibi subitus; Orionis vertitur nota. Currere alti etiam seroque cernitis
-innumeris miraturus amplectique collo sustinet quemque! Litora ante turba?
+
+

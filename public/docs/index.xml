@@ -12,10 +12,10 @@
     
     <item>
       <title></title>
-      <link>http://example.org/docs/postgresql_summary/</link>
+      <link>http://example.org/docs/postgresqlsummary/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>http://example.org/docs/postgresql_summary/</guid>
+      <guid>http://example.org/docs/postgresqlsummary/</guid>
       <description>PostgreSQL Installing.  Go to the github source here and download the github from source. Go to documentation here or for a full process here here My idea of installing it from source is that you can build with specific option. In particular, I was interested in &amp;ndash;with-python:
 cd /path_to_folder_POSTGRESQL ./configure mkdir build_dir cd build_dir /path_to_source_tree/configure &amp;ndash;with-python gmake  Some minor problems  It could be that the settings of the computer don&amp;rsquo;t know the path to the command &amp;ldquo;pg_ctl&amp;rdquo; export PATH=$PATH:/path_to_pg_ctl  This is usually found in: cd /usr/local/psql/bin</description>
     </item>

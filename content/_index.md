@@ -45,13 +45,14 @@ while I edit it, is
     
     hugo server --minify --theme book
 
-1. The command **hugo** manages the website. 
-2. The command **server** will host a server in your computer
-3. The option **--minify** is a command that helps 
-with the translation of markdown to html,
-and fixes previous bugs.
-4. The option **--theme book** is the theme choice of this website.
+1. The command `hugo` manages the website. 
+2. The command `serve` will host a server in your computer
+3. The option `--minify` makes the output html code shorter.
+4. The option `--theme book` is the theme choice of this website.
 5. Open http://localhost:1313/ in your browser. 
+6. See [here](https://github.com/alex-shpak/hugo-book#configuration) for
+   configuration for this particular theme: **book**
+
 
 The list of links that will appear 
 in the right menu are the sections of 

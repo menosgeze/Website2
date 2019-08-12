@@ -94,27 +94,12 @@
   </url>
   
   <url>
-    <loc>http://example.org/docs/postgresql_summary/</loc>
+    <loc>http://example.org/docs/postgresqlsummary/</loc>
     <priority>0</priority>
   </url>
   
   <url>
     <loc>http://example.org/docs/dailylessons/</loc>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>http://example.org/docs/sub-section/</loc>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>http://example.org/docs/sub-section/ego-numen/</loc>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>http://example.org/docs/sub-section/natusque/</loc>
     <priority>0</priority>
   </url>
   

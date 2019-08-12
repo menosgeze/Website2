@@ -6,7 +6,7 @@ type: docs
 # GEZE
 
 The content of this website is the following:
-![myself](/home/geze/Desktop/Website/content)
+![myself](./myself.jpg)
 {{< columns >}}
 
 

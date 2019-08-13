@@ -1,6 +1,6 @@
 # PostgreSQL
 
-## Installing.
+## Installing
 
 1. Download the github source 
 [here](https://github.com/postgres/postgres) 
@@ -102,7 +102,7 @@ path to `HOME` should be.
 	pg_ctl -D psql_data stop
 {{</highlight>}}
 
-## A great tutorial.
+## A great tutorial
 A great tutorial for Postgres is [here](https://pgexercises.com/)
 where they don't use any other SQL language but Postgres. 
 I tried other ones where they used old versions of MySQL,
@@ -172,7 +172,7 @@ See [here](https://www.postgresql.org/docs/9.5/sql-insert.html)
     - To retrieve multiple parts:
 {{<highlight postgresql>}}
     TO_CHAR(attribute, 'YYYY-MM')
-{{{</highlight>}}
+{{</highlight>}}
 
     - To retrieve a single part:
 {{<highlight postgresql>}}
@@ -227,7 +227,7 @@ parent/child of, etc.
     - Use `str like 'beginning%'` to check if it begins with a pattern, or `UPPER(str)` to make it all upper case.  
     - For histograms with Postgresql see [here](https://tapoueh.org/blog/2014/02/postgresql-aggregates-and-histograms/)
 
-## Back up:
+## Back up
 There are several things to know here:
 
 * To dump a copy use:

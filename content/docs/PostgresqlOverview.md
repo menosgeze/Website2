@@ -27,7 +27,7 @@ build it with specific options. In particular, I was interested in
 the path to the command `pg_ctl`
 
 {{< highlight bash >}}
-	export PATH=path/to/pg_ctl:$PATH
+	export PATH=path/pg_ctl:$PATH
 {{</highlight>}}
 
 This is where I usually found it:

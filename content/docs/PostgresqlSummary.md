@@ -168,6 +168,21 @@ See [here](https://www.postgresql.org/docs/8.3/tutorial-join.html) for a larger 
 `With temporaryTableName as (select statment) select statement using another table and temporaryTableName;`
 There could be several temporaryTableNames separated by comma but the last one does not have comma. 
 
+* The With Recursive Clause:
+
+`with recursive temptable as (
+select attributes from tab1 where conditions
+union 
+select tab1.attributes from tab1
+inner join temptable 
+on temptable.parent_attribute = tab1.child_attribute)
+select * from temptable;`
+
+This is a basic example where one can be trying 
+to trace ascendants/descendants
+in some sense of a single data: recommended by, manager/employee of,
+parent/child of, etc.
+
 * Other cool stuff:
     - Strings are appended with ||: `attribute || ', ' || attribute2.`
     - UNION to list rows from two tables with the similar attributes, and usually the same number of attributes.

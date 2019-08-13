@@ -49,7 +49,7 @@ while I edit it, is
 2. The command `serve` will host a server in your computer
 3. The option `--minify` makes the output html code shorter.
 4. The option `--theme book` is the theme choice of this website.
-5. Open http://localhost:1313/ in your browser. 
+5. I open http://localhost:1313/ in my browser to see a live preview. 
 6. See [here](https://github.com/alex-shpak/hugo-book#configuration) for
    configuration for this particular theme: **book**
 

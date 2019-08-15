@@ -116,7 +116,12 @@ documentation because the latest version has improved so much.
 CREATE TABLE tablename (type1 arg1 constraint1, type2 arg2 constraint2, etc.);
 {{</highlight>}}
 
-A basic list of types is: `varchar` or `varchar(n)`,`int`, `float`, `boolean`, `int[]` although when inserting from python witn psycopg2 one inserts as `'{val1,...}'`. See [here](https://www.guru99.com/postgresql-data-types.html)
+A basic list of types is: `varchar` or `varchar(n)`,`int`, `float`, `boolean`, `int[]` although when inserting either from the terminal or from python witn psycopg2 one inserts as `'{val1,...}'`. See [here](https://www.guru99.com/postgresql-data-types.html)
+
+Moreover, to check that an element is in an array, one uses:
+{{<highlight postgresql>}}
+... arg = any(array_name::int[])
+<</highlight>}}
 
 * Retrieve data
 {{<highlight postgresql>}}

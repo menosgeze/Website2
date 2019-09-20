@@ -55,7 +55,23 @@ is that you need to rewrite the line.
     export PGHOST="path_to_data_folder"
 {{</highlight>}}
 
+4. Sometimes installing `psycopg2`, the library that allows to connect
+   your postgres database to python, requires some upgrades and it is necessary
+   to run `sudo pip install --upgrade psycopg2`, because without the
+   `--upgrade` part, it throws an error code: "unable to install psycopg2".
+   If this still gives you problem while importing it with an error of
+   `libpq.so.5`, then find where it is with `find / -name libpq.so.5` and then symbolic link this library to a common library path: 
+{{<highlight bash>}}
+ln -s /usr/local/pgsql/lib/libpq.so.5 /usr/lib/libpq.so.5
+{{</highlight>}}
 
+5. If importing `psycopg2` is only allowed from Python but not from IPython, it
+could be the case that IPython is refering to another installation of Python in
+your system. From any of them run `import sys; sys.path` and again symbolic
+link the `libpq.so.5` to a common library path: 
+{{<highlight bash>}}
+ln -s /usr/local/pgsql/lib/libpq.so.5 /usr/bin/libpq.so.5
+{{</highlight>}}
 
 
 ## Creating a Database

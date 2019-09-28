@@ -14,12 +14,13 @@ or the full process
 build it with specific options. In particular, I was interested in
 `--with-python`: 
 {{< highlight bash >}}
-	cd /path_to_folder_POSTGRESQL
+	cd /path/to/folder/POSTGRESQL/
 	./configure
 	mkdir build_dir
 	cd build_dir
-	/path_to_source_tree/configure --with-python
-	gmake
+	/path/configure --with-python
+	make
+    make install
 {{< /highlight >}}
 
 ## Some minor problems
@@ -52,7 +53,7 @@ which is a conflicting with the server due to not closing the server.
 is that you need to rewrite the line.
 
 {{< highlight bash >}}
-    export PGHOST="path_to_data_folder"
+    export PGHOST="path/to/data/folder/"
 {{</highlight>}}
 
 * Sometimes installing `psycopg2`, the library that allows to connect
@@ -128,7 +129,7 @@ I tried other ones where they used old versions of MySQL,
 and they were too different, and you cannot rely in the 
 documentation because the latest version has improved so much.
 
-## The first few commnands
+## The first few commands
 
 * Creating Tables [here](https://www.postgresql.org/docs/9.1/sql-createtable.html)
 {{<highlight postgresql>}}

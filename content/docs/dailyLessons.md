@@ -1,5 +1,19 @@
 # The life of a beginner - Still more Arch!
 
+## My first lesson
+In order to see a live-preview of a hugo website like this, 
+navigate to the main or root folder of the Website, and run:
+    
+    hugo server --minify --theme book
+
+1. The command `hugo` manages the website. 
+2. The command `serve` will host a server in your computer
+3. The option `--minify` makes the output html code shorter.
+4. The option `--theme book` is the theme choice of this website.
+5. I open http://localhost:1313/ in my browser to see a live preview. 
+6. See [here](https://github.com/alex-shpak/hugo-book#configuration) for
+   configuration for this particular theme: **book**
+
 ## Listing Partitions 
 To see a tree of the partitions in your
 hard drives and solid state drives, even

@@ -2,15 +2,15 @@
 
 ## Installing
 
-1. Download the github source 
+* Download the github source 
 [here](https://github.com/postgres/postgres) 
  
-2. Follow the documentation 
+* Follow the documentation 
 [here](https://www.postgresql.org/docs/9.3/install-short.html) 
 or the full process
 [here](https://www.postgresql.org/docs/9.3/install-procedure.html)
 
-3. I like installing it from source because you can
+* I like installing it from source because you can
 build it with specific options. In particular, I was interested in
 `--with-python`: 
 {{< highlight bash >}}
@@ -23,7 +23,7 @@ build it with specific options. In particular, I was interested in
 {{< /highlight >}}
 
 ## Some minor problems
-1. It could be that the settings of the computer don't know 
+* It could be that the settings of the computer don't know 
 the path to the command `pg_ctl`
 
 {{< highlight bash >}}
@@ -43,29 +43,32 @@ To make it permanent, add it to the file:
 Or add it to the initializing file of your personalized shell.
 
 
-2. It could be that one forgets to close the server at the end 
+* It could be that one forgets to close the server at the end 
 of a session and then one has problems to restart the server. Then
 go to the folder of the data, and then remove `rm` the file `postmaster.pid`
 which is a conflicting with the server due to not closing the server.
 
-3. It could be that still one cannot open the database. Sometimes the problem 
+* It could be that still one cannot open the database. Sometimes the problem 
 is that you need to rewrite the line.
 
 {{< highlight bash >}}
     export PGHOST="path_to_data_folder"
 {{</highlight>}}
 
-4. Sometimes installing `psycopg2`, the library that allows to connect
+* Sometimes installing `psycopg2`, the library that allows to connect
    your postgres database to python, requires some upgrades and it is necessary
    to run `sudo pip install --upgrade psycopg2`, because without the
    `--upgrade` part, it throws an error code: "unable to install psycopg2".
-   If this still gives you problem while importing it with an error of
-   `libpq.so.5`, then find where it is with `find / -name libpq.so.5` and then symbolic link this library to a common library path: 
+   
+* If this still gives you problem while importing `psycopg2` with an error of
+   `libpq.so.5`, then find where it is with `find / -name libpq.so.5` and 
+    then symbolic link this library to a common  library path: 
+
 {{<highlight bash>}}
 ln -s /usr/local/pgsql/lib/libpq.so.5 /usr/lib/libpq.so.5
 {{</highlight>}}
 
-5. If importing `psycopg2` is only allowed from Python but not from IPython, it
+* If importing `psycopg2` is only allowed from Python but not from IPython, it
 could be the case that IPython is refering to another installation of Python in
 your system. From any of them run `import sys; sys.path` and again symbolic
 link the `libpq.so.5` to a common library path: 
@@ -80,7 +83,7 @@ I love Cocalc/SageMath documentation for using postgreSQL in Cocalc in 2 min
 [here](https://doc.cocalc.com/howto/postgresql.html)
 where either one has properly set up the `HOME` variable or replace it by what the command `pwd` shows.
 
-1. Create the data folder, for us it will be `psql_data` 
+* Create the data folder, for us it will be `psql_data` 
 {{<highlight bash>}}
 	cd
 	pg_ctl initdb -D psql_data 
@@ -93,7 +96,7 @@ go to it and write the lines
 in quotes to the file `postgresql.conf`
 inside the folder.
 
-2. Start the postgresql server
+* Start the postgresql server
 {{<highlight bash>}}
 pg_ctl -D psql_data -l logfile -o "-h ''" start
 {{</highlight>}}
@@ -102,7 +105,7 @@ The options are to write a logfile in case of errors. However,
 one can just start it with: `pg_ctl -D psql_data start`. 
 And check it is running with: `pg_ctl -D psql_data status`.
 
-3. Create the database using these configuration in this folder:
+* Create the database using these configuration in this folder:
 {{<highlight bash>}}
     export PGHOST="$HOME/psql_data"
 	createdb dbname
@@ -113,7 +116,7 @@ Don't forget to replace the database name `dbname`, and if
 this does not work, replace also `$HOME` by what you think the actual
 path to `HOME` should be.
 
-4. Exit the database with `\q` and close the server with:
+* Exit the database with `\q` and close the server with:
 {{<highlight bash>}}
 	pg_ctl -D psql_data stop
 {{</highlight>}}
@@ -134,17 +137,13 @@ CREATE TABLE tablename (type1 arg1 constraint1, type2 arg2 constraint2, etc.);
 
 A basic list of types is: `varchar` or `varchar(n)`,`int`, `float`, `boolean`, `int[]` although when inserting either from the terminal or from python witn psycopg2 one inserts as `'{val1,...}'`. See [here](https://www.guru99.com/postgresql-data-types.html)
 
-Moreover, to check that an element is in an array, one uses:
-{{<highlight postgresql>}}
-... arg = any(array_name::int[])
-<</highlight>}}
+Moreover, to check that an element is in an array, one uses: `arg = any(array_name::int[])`
+
 
 * Retrieve data
 {{<highlight postgresql>}}
 SELECT attribute1, attribute2 FROM tablename WHERE conditions 
-
 SELECT attribute1, count(\*) AS count FROM tablename WHERE conditions GROUP BY attribute1;
-
 SELECT attribute1, SUM(attribute2) AS sum FROM tablename WHERE conditions GROUP BY attribute1;
 {{</highlight>}}
 
@@ -242,7 +241,7 @@ in some sense of a single data: recommended by, manager/employee of,
 parent/child of, etc.
 
 * Other cool stuff:
-    - Strings are appended with ||: `attribute || ', ' || attribute2.`
+    - Strings are appended with ||: `attribute || ',' || attribute2.`
     - UNION to list rows from two tables with the similar attributes, and usually the same number of attributes.
     - Mathematical operators [here](https://www.postgresql.org/docs/9.1/functions-math.html) including the `width_bucket(attribute, min, max, number_of_buckets)` which splits the range from min inclusive to max exclusive to the number of buckets and tells where attribute falls. 
     - Use `str like 'beginning%'` to check if it begins with a pattern, or `UPPER(str)` to make it all upper case.  
@@ -258,12 +257,12 @@ pg_dump -U username -Z9 dbname > dbfile.pgsql
 where the option `-Z9` is for maximal compression, and `-Z0` is for no
 compression at all.
 
-    - And to restore it:
+* And to restore it:
 {{<highlight bash>}}
 psql dbname < file.pgsql
 {{</highlight>}}
 
-    - Or even better:
+* Or even better:
 {{<highlight bash>}}
 pg_restore --dbname=dbname
 {{</highlight>}}
@@ -271,7 +270,7 @@ pg_restore --dbname=dbname
 where there are multiple options to determine 
 what you want to restore, including indexes.
 
- - For example:
+* For example:
     1. `-a` for data only, 
     2. `-e` for exit on error, 
     3. `-f` for filename, 
@@ -289,4 +288,3 @@ COPY tablename(attributeListAsATuple) FROM 'path\cvsfile.ext' DELIMITER ',' NULL
 See [here](https://www.postgresql.org/docs/9.0/sql-copy.html)
  
 
-	

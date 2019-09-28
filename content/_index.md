@@ -39,12 +39,12 @@ The list of links that will appear
 in the right menu are the sections of 
 this main page, which is located in:
 
-    /path_to_website/content/_index.md
+    /path/to/website/content/_index.md
 
 The list of links of the left menu
 are documents listed in:
 
-    /path_to_website/content/docs
+    /path/to/website/content/docs
 
 
 

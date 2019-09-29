@@ -2,6 +2,10 @@
 
 This is a personal summary for Matplotlib, Numpy, SciPy, and SciKit-Learn.
 
+* Recall that python has the option `list_name.index(element_value)` which returns the index in this list of this element. 
+
+
+
 ## The Matplotlib library's basic sintax.
 
 * First 
@@ -63,7 +67,7 @@ In particular, saving the result into a variable, makes the variable a dictionar
 * _Scatter plots_ have the `marker` option and can be chosen from: 'o', '^', 'x', '.'$,  and $'s'$ for square. The option `s` controls the size of the marker. In _plots_, one also have `markevery` to mark only certain dots.
 
 * One can also **personalized markers* using the module `mpl.path` as `mpath`. 
-Make a list of vertices of the form `(x,y,2)` where $2$ is a code for 
+Make a list of vertices of the form `(x,y,2)` where $2$ is a code for  
 **mpath.Path.LINETO**. Change the first one to `(x,y,1)` for
 **mpath.Path.MOVETO**. And add the last point `(0,0,79)` for **mpath.Path.CLOSEPOLY**. Then use `u,v,codes = zip(*listName)` to write the X,Y, codes lists, and use `my-marker = mpath.Path(np.asarray((u,v)).T, codes)`. Now you can pass this to the
 the option `marker` option. Other options are:
@@ -98,19 +102,65 @@ Other properties are `figure.facecolor`, `axes.facecolor` for the background; `a
 
 Alternatively, one can define this in a plain text file **matplotlibrc** in the same folder as the python-script or in the folder returned by `mpl.get\_configdir()` with one line per property of the form **property : value**  and thus it can be used in all the subsequent plots.
 
+* In order to **draw a picture** from a file containing the colors of each pixel, one can use for example:
+{{<highlight python>}}
+    plt.imshow(file, cmap = mpl.cm.binary, interpolation = "nearest")
+    plt.axis("off")
+    plt.show()`
+{{</highlight>}}
+
+
+
 ## The NumPy library's basic sintax.
-* First `import numpy as np`
+* First `import numpy as np`.
 
-* Recall that python has the option `list_name.index(element_value)` which returns the index in this list of this element. 
+* My major use of _NumPy_ is for their arrays, which contain the data (values) and metadata (internal description.) The major distinction is that each array has only one numerical type of entries. One can pass the option `dtype` in the construction of arrays to specify it, or call the routine `.dtype` to find it. The most common types are: bool; inti; int8/uint8 (8,16,32,64) where **u** means unsigned; float/16 (16,32,64 or just float); complex64 (64,128 or just complex). Compatibility with the _Numeric_ library allows to use _Numeric_ types: i integer, u unsigned integer, f single prec float, d double precision float, b bool, D complex, S string, U unicode, V void.
 
 
-* In order to create **random arrays** where the entries have been created with a specific distribution use: `numpy.random.command(length)`. For example: 
-`randn` or `standard_normal` takes the entries from the normal distribution, `randint(M, length)` take integers between _0_ and _M-1_ chosen from the uniform distribution..
+The command `stypeDict.keys()` return a list of all types. The command `dtype(type_character).type` returns the full-word of type. The command `dtype(type_name).char` return the single character type. Moreover, one can use **records** or personalized types, e.g. `my_type = dtype[('name', dataType)]; myitem = array([(tuple1)], dtype=t)`.
+
+* The most common way to create arrays is through the use of `np.arange`. For example `np.arange(n)` has the same data as `range(n)` and `np.arange(m,n)` has the same data as `range(m,n)`. 
+
+* The most common ways to append arrays are through the use of
+    - The routine `append(array, values, axis=None)`, which requires the values to have the same dimension. _Warning_ contrary to the `append` in Python, this is not in place.
+    - The routine `block(list_of_arrays)`, which joins them.
+
+* Among the most common ways to split arrays is:
+    - The routine `array_split(array, indices, axis=0)`, which allows non-equal subdivision of the array and makes the latest ones shorter.
+
+* The **dimension** of an array can be found by the routine `shape` (without parenthesis). It can be change with the command `reshape((n1,n2,...,nk))` (not in place) or `resize(tuple)` (in place) as long as the number of entries matches the product of the tuple entries. In particular `ravel()` flattens the array (not in place,) `flatten()` also allocates memory (not in place.) Using _Linear Algebra_ notion, one has `transpose()` or just `T` which reverse the individual dimensions.
+
+* Contrary to _Python_, one can operate (addition, subtraction, multiplication, division, checking equality) a number to an array, e.g. `my_array + number`, and it does perform an entrywise operation, i.e. it operates every entry of the array. Similarly, checking for equalities with `my_array == my_array_2` returns a boolean array comparing corresponding entries. 
+
+*  The **indexing** in Numpy is also slightly different `[i_1,i_2]` means what Python has for `[i_1][i_2]`. In the same way, **slicing** is done through square brackets and a comma separated list of slices. For example `[:,[2:4],[::-1]]` means elements whose 1st dimension is unrestricted, 2nd dimension is either 2 or 3, and the last dimension is reversed. 
+
+    - The routine `hsplit(data,n)` or `split(data,n,axis=1)` homogeneously splits the columns into n subarrays.
+    - The routine `split(data,n)` or `split(data,n,axis=0)` homogeneously splits the rows into n subarrays.
+    - The `axis` option says on which dimension we are splitting a multidimensional array. 
+    \end{itemize}
+
+
+* The **Stacking** options are: 
+    -The routine `np.hstack((a,b))` or `np.concatenate((a,b), axis=1)` appends two arrays horizontally. `column\_stack((a,b))` changes list to columns and appends them horizontally, but on multidimensional arrays, it is the same as `hstack`.
+    -The routine `np.vstack((a,b))` or `np.concatenate((a,b), axis=0)` appends two arrays vertically. `row\_stack((a,b))` works as well as `vstack`.
+     - `r_` allows faster stacking by listing entries by themselves, arrays described as `begin-inclusive:end-inclusive:number-of-entries+j`. Similarly `c_`. The difference is that for 2-dimensional arrays `r_` stacks them by rows and `c_` stacks them by columns. 
+
+
+* In order to create **random arrays** where the entries have been created with a specific distribution use: `np.random.command(length)`. 
+    
+    - `random.rand`, `random_sample`, `random`, `randf`, `sample` choose from the uniform distribution in some version of the interval [0,1].
+    - `randn,standard\_normal` chooses from the Gaussian normal distribution, i.e. median 0 and standard deviation 1.
+    - `randint` (half-open), `random\_integers` chooses from the uniform distribution on the integers using the same ranges as `arange`.
+    \end{itemize}
+    - For other distributions listed see: `uniform`, `choice`, `bytes`, `shuffle`, `permutation`, `(multivariate_)normal` with symmetric positive-definite covariance matrix, `lognormal`, `logseries`, `dirichlet`, `beta`, `(standard_)gamma`, `laplace`, `standard_cauchy`, `(standard_)exponential`, `geometric`, `hypergeometric`, `logistic`, `(negative_)binomial`, `multinomial`, `(noncentric_)chisquare`, `(noncentric_)f`, `pareto`, `poisson`, `power`, `rayleigh`, `gumbel`, `standard_t`, `triangular`, `vonmises`, `wald`, `wibul`, `zipf`.
+    - For a more general use see the documentation of `RandomState`.
+
+
 
 * Some basic statistics of an array can be read with `np.mean(data_array)` and `np.std(data_array)` for the **mean** and **standard deviation**. 
 
 * In order to make arrays splitting an interval into equal sub-intervals use
-`np.linspace(a,b,n)` to return an array with _n_ points equally arithmetically spaced where the first is _a_ and the last is _b_.
+`np.linspace(a,b,n)` to return an array with _n_ points arithmetical-equally spaced, e.g. `a + (b-a)/(n-1) * i`. Similarly the routine `np.logspace(a,b,n)` returns _n_ points geometrical-equally spaced, e.g. `10**(a + (b-a)/(n-1) * i)`
 
 * In order to **load text** containing 2 numbers per line, there is various alternatives, I here choose the 2 most appealing to me:
 
@@ -129,7 +179,19 @@ Alternatively, one can define this in a plain text file **matplotlibrc** in the 
     _Note_: Another important option is `usecols` which take a list of the columns that one wants to analyze.
   
 
+## Additional NumPy routines and commands
 
+* The **Polynomials** are described by their descending coefficients, e.g. `np.poly1d([3,2,1])` means the quadratic polynomial `3*x**2 + 2*x + 1`. One can derived them with `.deriv()`, indefinite-integrate them with `.integ(n)`, which also sets the constant to _n_, evaluate them in numbers or in intervals `my_poly([a,b])`
+
+* One can **Vectorize** a function, which means given a function `f(arg1,arg2)`, use `vf = np.vectorize(f)`, and now one can pass two arrays of the same length and `vf` will compute `f` one each par of corresponding entries. _WARNING_: Sometimes running a vectorized function using NumPy in Python can run as fast as writing a loop in Cython, and it is much simpler.
+
+* One can test the structure of an array with `np.iscomplex` or `np.isreal`, which returns an array. Or test the structure of all its elements combined with `np.iscomplexob`, `np.isrealobj`. Alternatively, one can split into the real and imaginary parts using `np.real` and `np.imag`.
+
+* In order to define **piecewise-functions** one uses `np.select(conditions\_array, functions\_array)`, e.g. `np.select([x<1,x>2], [x**2, x**3])`.
+
+# The begining of SciPy
+
+* See the library **scipy.special** for many mathematical physics functions: airy, elliptic, bessel, gamma, beta, hypergeometric, parabolic cylinder, mathieu, spheroidal wave, struve and kelvin. It include some stats functions which are used more commonly through the **scipy.stats** module. Additionally, the module **scipy.special.cython_special** offers cython versions of many of this special functions.
 
 
 

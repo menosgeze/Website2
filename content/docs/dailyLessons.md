@@ -42,7 +42,7 @@ In particular, if there is a usb flash drive, it will list it, and if it is moun
    yay WideVine
 {{</highlight>}}
 
-Not only, I did not have to set it up, it works perfectly, and I am now able to watch Netflix and Amazon movies again.
+Not only did I not have to set it up, it worked perfectly and I am now able to watch Netflix and Amazon movies again.
 
 ## Mounting Windows to Linux
 While I was transitioning from Windows to Linux, I wanted to retrieve my Windows personal files. One suggestion from was to use the package **ntfs-3g** installed with:

@@ -16,7 +16,7 @@ This is what I hope it becomes a personal summary for Matplotlib, Numpy, SciPy, 
 
 Recall that the `plt.plot` command does not plot anything by itself. It is more an intention preparing the plot, which prepares the commands that will give to plot when one calls `plt.show()` (without arguments!).
 
-* In order to plot a curve using some lists of _X_ and _Y_ values, use $`plt.plot(X,Y)`. This automatically joins the points trying to represent a curve. In order to plot only the points, a **scatter** plot, use $plt.scatter(X,Y)$.
+* In order to plot a curve using some lists of _X_ and _Y_ values, use `plt.plot(X,Y)`. This automatically joins the points trying to represent a curve. In order to plot only the points, a **scatter** plot, use `plt.scatter(X,Y)`.
 
 * In order to plot a **bar graph** use `plt.bar(X,Y)` where _X_ is where the bars begin, and the _Y_ is the heights of the bars. Analogously, one can use `plt.hbar(X,Y)` to make a horizontal bar graph. One uses the option `width` to customize the `width` of the bars, the option `color` to customize the colors, the option `bottom` to graph a raised bar (used to graph a second bar over the first,) or graph horizontal bar graphs with one set of possitive heights and one set of negative heights to compare. 
    
@@ -64,7 +64,7 @@ In particular, saving the result into a variable, makes the variable a dictionar
 
 * _Plots_ also have `linewidth` to determine the thickness set.
 
-* Both _Plots_ and _Scatter plots_ have the `marker` option and can be chosen from: 'o', '^', 'x', '.'$,  and $'s'$ for square. For _Scatter plots_, the option `s` controls the size of the marker. In _plots_, one also have `markevery` to mark only certain dots.
+* Both _Plots_ and _Scatter plots_ have the `marker` option and can be chosen from: 'o', '^', 'x', '.',  and 's' for square. For _Scatter plots_, the option `s` controls the size of the marker. In _plots_, one also have `markevery` to mark only certain dots.
 
 * One can also **personalized markers** using the module `mpl.path` as `mpath`. Make a list of _X_ values, a list of _Y_ values, and add a 0 to each of them. Make a code list starting with 1 meaning **mpath.Path.MOVETO**, followed by a lot of 2's meaning **mpath.Path.LINETO**, and a final code 79 meaning **mpath.Path.CLOSEPOLY**. If they were put together, use `X,Y,codes = zip(*listName)` to split the lists, and use `my-marker = mpath.Path(np.asarray((X,Y)).T, codes)`. Now you can pass this to the the option `marker`. Other options are:
     - `markersize` for plot or `s` for scatter
@@ -99,7 +99,7 @@ In particular, saving the result into a variable, makes the variable a dictionar
 {{<highlight python>}}
     plt.imshow(file, cmap = mpl.cm.binary, interpolation = "nearest")
     plt.axis("off")
-    plt.show()`
+    plt.show()
 {{</highlight>}}
 
 

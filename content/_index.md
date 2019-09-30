@@ -5,46 +5,25 @@ type: docs
 
 # GEZE
 
-The content of this website is the following:
+Hi all! I will be the content of this website. I will mainly post two things:
 ![myself](./myself.jpg)
 {{< columns >}}
 
 
 ## 1. Summaries 
 I will either list links to 
-__summaries__ of classes that I have taught,
-or of book chapters that I have read,
-or summaries of my daily lessons.
+__summaries__ of books-chapters, classes, topics, etc
+that I am interested about. In part, I am using this website as a self-organization tool. 
 
 <--->
 ## 2. Tutorials.
-I will post either __tutorials__ in my own notation,
-**links** to __guides__ and self adjustments,
-and **links** to __Cheat Sheets__ for either video games or software or any kind.
-
+I will post my 'redo' of great __tutorials__ and __cheat sheets__ (with the credits through links to the original authors.)
 {{< /columns >}}
 
-## Who I am?
-I am a Salvadorean who went from being a _Parking Attendant_
-in Universal Studios Hollywood,
-to be a _Mathematics Ph.D._ from the University of Washington, Seattle
-in only 12 years.
-I am an ex-Perico (Externado de San Jose), ex-Bruin (UCLA), ex-Matador (CSUN), ex-Husky (UW) 
-looking to transition into a Data scientist position.
-
-
-
-
-The list of links that will appear 
-in the right menu are the sections of 
-this main page, which is located in:
-
-    /path/to/website/content/_index.md
-
-The list of links of the left menu
-are documents listed in:
-
-    /path/to/website/content/docs
+## Who am I?
+I am a Salvadorean who went from being a _Parking Attendant_ in Universal Studios Hollywood,
+to a _Mathematics Ph.D._ from the University of Washington, Seattle in only 12 years... maybe not so great for 
+so many more successful people, but I am content with who I am. I am an Perico (Externado de San Jose), Bruin (UCLA), Matador (CSUN), and Husky (UW) looking to transition into a Data scientist position.
 
 
 
